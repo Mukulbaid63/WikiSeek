@@ -17,7 +17,7 @@ body{
     align-items: center;
     
     height: 85vh;
-    width: 70vw;
+    width: 80vw;
     }
 
 .search-value{
@@ -65,7 +65,7 @@ footer{
   .app-wrap>h4{
     margin: 0px;
     padding: 0px;
-    margin-bottom: 30px;
+   
     font-family: Montserrat;
     font-weight: 300;
     font-size: 15px;
@@ -74,8 +74,7 @@ footer{
         border: 0;
         width:50vw;
         height: 1px;
-        position: fixed;
-        top:15%;
+        margin-bottom: 30px;
         
         background-image: linear-gradient(to right, rgba(255, 254, 254, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
     }
