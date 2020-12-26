@@ -18,7 +18,7 @@ searchValue.addEventListener('keypress', temp);
          var link=document.createElement("a");
          link.setAttribute("href",`https://en.wikipedia.org/wiki/${ans[1][i]}`);
          link.setAttribute("style","text-decoration:none;color:white;")
-        
+        link.setAttribute("target","_blank"
          var text = document.createTextNode(`${ans[1][i]}`);
          link.appendChild(text);
          var tag = document.createElement("p");
