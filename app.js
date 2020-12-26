@@ -1,7 +1,7 @@
 var searchValue=document.querySelector(".search-value");
 var result;
 var element = document.querySelector(".output-list");
-searchValue.addEventListener('keypress', (event) => {
+var temp=debounce((event) => {
     result = `${event.target.value}`;
     fetch(`https://en.wikipedia.org/w/api.php?&origin=*&format=json&action=opensearch&search=${event.target.value}`)
     .then(ans => {
@@ -9,7 +9,8 @@ searchValue.addEventListener('keypress', (event) => {
       }).then(displayResults);
       
    console.log(result);
- });
+ },100)
+searchValue.addEventListener('keypress', temp);
  function displayResults(ans){
      element.innerHTML=""
      for(let i=0;i<ans[1].length;i++){
@@ -26,3 +27,17 @@ searchValue.addEventListener('keypress', (event) => {
      }
      
  }
+ function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
