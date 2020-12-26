@@ -9,7 +9,7 @@ var temp=debounce((event) => {
       }).then(displayResults);
       
    console.log(result);
- },100)
+ },400)
 searchValue.addEventListener('keypress', temp);
  function displayResults(ans){
      element.innerHTML=""
