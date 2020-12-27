@@ -1,1 +1,1 @@
-# WikiSearch
+# WikiSeek
